@@ -74,7 +74,6 @@ function api_get_new_word(req, res) {
 		translate_word(word, (err, t_word) => { // Translating it.
 			if (err) return (res.send(err).status(400));
 			else if (word == t_word[0]) { // Avoid yandex translation errors.
-				console.log(word, 'and', t_word[0], 'are the same.');
 				req.params.level++;
 				return api_get_new_word(req, res);
 			}
