@@ -29,7 +29,6 @@ function get_word_list(cb) {
 	})
 }
 
-
 /**
  * Translates a word using the yandex API.
  *

@@ -13,7 +13,7 @@ const Ctrl				= Rfr('controllers/controllers.js');
 // App initialisation
 __INIT_APP();
 
-MadBox.App.get('/', Ctrl.GUI.client.get_front);
+MadBox.App.get('/', (req, res) => {res.render('translate')});
 MadBox.App.get('/:level', UrlParser, Ctrl.API.translate.api_get_new_word);
 
 __EVENT_EMITTER.on(__READY_APP,() => {
