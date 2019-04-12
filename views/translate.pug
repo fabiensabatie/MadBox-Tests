@@ -1,0 +1,18 @@
+doctype html
+html(lang='en', dir='ltr')
+	head
+		meta(charset='utf-8')
+		title Translato, a translation game
+		link(rel="stylesheet" href="/styles/main.css")
+		script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
+		script(src='https://cdn.jsdelivr.net/npm/vue')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
+	body
+		#translato
+			p Trouvez la traduction anglaise de {{ word }}
+			p Petit indice, le mot compte {{ t_word_length }} lettres!
+			p Vous avez {{ life_count }} vies restantes.
+			form(@submit.prevent="test_user_result")
+				input(v-model='user_result')
+				button Vérifier
+		script(type='text/javascript', src='/scripts/translato.js')

@@ -1,5 +1,5 @@
 "use strict";
-const QuasR				= require('./app.js');
+const MadBox				= require('./app.js');
 const BodyParser		= require('body-parser');
 const JsonParser		= BodyParser.json();
 const Rfr				= require('rfr');
@@ -11,8 +11,12 @@ const Ctrl				= Rfr('controllers/controllers.js');
 *******************************************************************************/
 
 // App initialisation
-__INIT_APP();
 
-__EVENT_EMITTER.on(__READY_APP,() => {
-	console.log('App is ready ! 🚀')
+MadBox.App.get('/', Ctrl.GUI.client.get_front);
+MadBox.App.get('/:level', UrlParser, Ctrl.API.translate.api_get_new_word);
+
+Ctrl.API.translate.get_word_list((err) => { // Fetches the list of words first
+	if (err) console.log(err);
+	MadBox.Server.listen(8080);
+	console.log('Translato is ready at : "http://localhost:8080" 🚀')
 });
