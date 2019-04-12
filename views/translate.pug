@@ -9,6 +9,9 @@ html(lang='en', dir='ltr')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
 	body
 		#translato
+			.loader(v-if="loader")
+				img(src="/assets/loader.gif")
+				span Recherche d'un nouveau mot
 			p Trouvez la traduction anglaise de {{ word }}
 			p Petit indice, le mot compte {{ t_word_length }} lettres!
 			p Vous avez {{ life_count }} vies restantes.

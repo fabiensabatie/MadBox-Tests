@@ -33,3 +33,20 @@ button {
 		background-color: white;
 		color: #aaaaff;
 	}
+
+.loader {
+	text-align: center;
+	width: 100vw;
+	height: 100vh;
+	background-color: white;
+	font-size: 30px;
+}
+
+.loader img {
+	margin: auto;
+	display: block;
+}
+
+.loader span {
+	color:#aaaaff;
+}
