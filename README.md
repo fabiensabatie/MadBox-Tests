@@ -1,10 +1,12 @@
 # MadBox
 
-
 ## Prérequis :
 
-Vous devez avoir Node.js et NPM installés sur votre ordinateur pour executer le serveur correctement.
-(https://nodejs.org/en/download/)
+Vous devez avoir Node.js, NPM et git installés sur votre ordinateur pour executer le serveur correctement.
+- Node : https://nodejs.org/en/download/
+- GIT : https://www.atlassian.com/git/tutorials/install-git
+
+Les commandes doivent être éxécutées via le terminal (Linux/Mac) / Powershell pour Windows.
 
 ## Partie API/Automatisation (Temps requis : 4h)
 
