@@ -18,7 +18,7 @@ git clone https://github.com/fabiensabatie/MadBox.git MadBox && cd MadBox && npm
 
 Pour accéder au jeu de traduction : http://localhost:8080
 
-Si vous souhaitez repeupler la base de donnée, vous pouvez la vider la base de donnée et la remplir à nouveau via la commande :
+Si vous souhaitez repeupler la base de donnée, vous pouvez la vider et la remplir à nouveau via la commande :
 ```
 node server.js renew
 ```
