@@ -13,7 +13,11 @@ const Ctrl				= Rfr('controllers/controllers.js');
 // App initialisation
 __INIT_APP();
 
-MadBox.App.get('/', (req, res) => {res.render('translate')});
+// TEST PLAYABLE
+MadBox.App.get('/playable', (req, res) => { return (res.render('playable')); });
+
+// TEST API
+MadBox.App.get('/', (req, res) => {return (res.render('translate'))});
 MadBox.App.get('/:level', UrlParser, Ctrl.API.translate.api_get_new_word);
 
 __EVENT_EMITTER.on(__READY_APP,() => {

@@ -5,7 +5,7 @@
 Pour démarrer le serveur :
 
 ```
-npm i && npm start
+git clone https://github.com/fabiensabatie/MadBox---Playable.git MP && cd MP && npm i && npm start
 ```
 
 Pour accéder au jeu : http://localhost:8080
@@ -36,10 +36,10 @@ Dans public/scripts/translato.js la vue gère l'appel à l'api mentionnée ci-de
 
 - Il serait plus judicieux de stocker toutes les traductions avant plutôt qu'au fur et à mesure.
 - Le code coté client est ouvert, et n'importe quel joueur peut modifier son score / voir les reponses s'il cherche dans la console.
-- Une définition claire de la notion de niveau aurait permis d'éviter de collecter tous les mots à que demande d'une nouveau mot, en cherchant un couple traduit directement via le level.
+- Une définition claire de la notion de niveau aurait permis d'éviter de collecter tous les mots lorsqu'un joueur demande d'une nouveau mot, en cherchant un couple traduit directement via le level.
 - L'API n'est pas sécurisée
 - Yandex ne parvient pas à tout traduire, par conséquent, un mot traduit qui est égal à son mot français est ignoré. Ceci peut mener à de faux négatifs pour les mots s'écrivant à l'identique en français et en anglais.
 
 ## Playable
 
-Les deux tests sont accessibles via ce Git. Vous pouvez acceder au test playbale via http://localhost:8080/playable
+Les deux tests sont accessibles via ce Git. Vous pouvez acceder au test playable via http://localhost:8080/playable

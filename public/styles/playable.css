@@ -3,6 +3,7 @@
 body {
 	font-family: 'Raleway', sans-serif;
 	text-align: center;
+	margin: 0px;
 }
 #container {
 	width: 100vw;
