@@ -1,5 +1,11 @@
 # MadBox
 
+
+## Prérequis :
+
+Vous devez avoir Node.js et NPM installés sur votre ordinateur pour executer le serveur correctement.
+(https://nodejs.org/en/download/)
+
 ## Partie API/Automatisation (Temps requis : 4h)
 
 Pour démarrer le serveur :
