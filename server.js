@@ -25,5 +25,6 @@ __EVENT_EMITTER.on(__READY_APP,() => {
 		if (err) return (console.log(err));
 		MadBox.Server.listen(8080);
 		console.log('Translato is ready at : "http://localhost:8080" 🚀');
+		console.log('Playable is ready at : "http://localhost:8080/playable" 🚀');
 	})
 });
