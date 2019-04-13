@@ -2,7 +2,6 @@
 ****************************** Environment variables ***************************
 *******************************************************************************/
 
-if ( WEBGL.isWebGLAvailable() === false ) document.body.appendChild( WEBGL.getWebGLErrorMessage() );
 let container, controls, camera, scene, renderer, circle, plane, rotate = true, gravity = 0.005;
 const RECTANGLE_W = 20, RECTANGLE_H = 1, CIRCLE_RADIUS = 1;
 

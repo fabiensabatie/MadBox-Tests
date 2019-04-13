@@ -1,15 +1,16 @@
 # MadBox
 
-## API / AUTOMATISATION
+## Partie API/Automatisation (Temps requis : 4h)
 
 Pour démarrer le serveur :
 
 ```
-git clone https://github.com/fabiensabatie/MadBox---Playable.git MP && cd MP && npm i && npm start
+git clone https://github.com/fabiensabatie/MadBox.git MadBox && cd MadBox && npm i && npm start
 ```
 
-Pour accéder au jeu : http://localhost:8080
-Pour vider la base de donnée et la remplir à nouveau :
+Pour accéder au jeu de traduction : http://localhost:8080
+
+Si vous souhaitez repeupler la base de donnée, vous pouvez la vider la base de donnée et la remplir à nouveau via la commande :
 ```
 node server.js renew
 ```
@@ -40,6 +41,21 @@ Dans public/scripts/translato.js la vue gère l'appel à l'api mentionnée ci-de
 - L'API n'est pas sécurisée
 - Yandex ne parvient pas à tout traduire, par conséquent, un mot traduit qui est égal à son mot français est ignoré. Ceci peut mener à de faux négatifs pour les mots s'écrivant à l'identique en français et en anglais.
 
-## Playable
 
-Les deux tests sont accessibles via ce Git. Vous pouvez acceder au test playable via http://localhost:8080/playable
+## Partie collision (Temps requis : 5h)
+
+Pour accéder au jeu de collision : http://localhost:8080/playable
+
+Structure :
+```
+public/scripts/vendor : Scripts vendeurs (ThreeJS)
+public/scripts - playable.js : Script ThreeJS gérant la scene
+public/views - playable.pug : Vue pug du jeu de collision
+```
+
+### Points d'amélioration :
+- Methode de collision à revoir : la balle ne rebondit pas correctement lorsque le rectangle est à la verticale, de plus le calcul semble lent et peu optimisé. J'observe parfois des lags dans le déplacement de la balle.
+- Dans le cadre de cet exercice, l'utilisation des canvas HTML5 sans threejs offre une flexibilité plus intéressante (pas de conversion entre les coordonnées du monde et celles de l'écran nécessaire, comme c'est ici le cas).
+
+### Difficultés
+- J'ai passé plus des deux tiers de cet exercice à debug la collision, qui s'est soldée par une simple inversion du signe de theta. Je ne comprends pas encore complètement en quoi ce changement permet une collision propre.
