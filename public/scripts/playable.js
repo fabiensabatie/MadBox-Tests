@@ -71,7 +71,7 @@ function get_meshes() {
 	rectangle = new THREE.Mesh( geometry, material );
 	rectangle.position.y -= 5;
 	rectangle.center = {};
-	rectangle.rotation.z += Math.random() * 2;
+	rectangle.rotation.z = Math.random() * 2;
 
 	// Adding the meshes to the scene
 	scene.add(circle);
@@ -81,7 +81,7 @@ function get_meshes() {
 /* Resets the meshes rotations and positions */
 function reset_game() {
 	rotate = true;
-	rectangle.rotation.z += Math.random() * 2;
+	rectangle.rotation.z = Math.random() * 2;
 	circle.position.y = 10;
 	circle.position.x = 0;
 	circle.speed.x = 0;
