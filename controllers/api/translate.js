@@ -20,7 +20,7 @@ function get_word_list(cb) {
 		.map((w) => (w.replace(/\s/g, ''))).sort((a, b) => (a.length - b.length)) // Sorting for levels
 		word_list = [... new Set(word_list)].map((w) => ({word : w})).slice(0, __WORDS_TO_ADD); // Removing doublons and fetching 500 words only
 		__MAX_LEVEL = word_list[word_list.length-1].word.length; __MIN_LEVEL = word_list[0].word.length; // Defining levels
-		__MONGO_ACTIVE_DBS[__MONGO_DBNAME].addDocuments(__MONGO_WORDS_COLLECTION, word_list, (err) => {
+		__MONGO_ACTIVE_DBS[__MONGO_DBNAME].addDocuments(__MONGO_WORDS_COLLECTION, word_list, (err) => { // Inserting the results
 			if (err && err.code != 11000) return (cb(err));
 			else if (err && err.code == 11000) console.log('The database already contained words.')
 			return cb(null, word_list);
@@ -39,7 +39,7 @@ function translate_word(w, cb) {
 		if (!w) return (cb('Please provide a word.'))
 		__MONGO_ACTIVE_DBS[__MONGO_DBNAME].findDocument(__MONGO_WORDS_COLLECTION, {_id: w._id}, (err, foundWord) => {
 			if (err) return cb(err);
-			if (foundWord.t_word) return cb(null, foundWord.t_word); // The translation alread exists
+			if (foundWord.t_word) return cb(null, foundWord.t_word); // The translation already exists
 			let encodedW = encodeURIComponent(w.word);
 			Axios.post(`${__TRANSLATION_URL}${encodedW}`)
 			.then((response) => {
@@ -65,11 +65,11 @@ function translate_word(w, cb) {
  * @returns {callback}
  */
 function get_new_word(level, cb) {
-	__MONGO_ACTIVE_DBS[__MONGO_DBNAME].findManyDocuments(__MONGO_WORDS_COLLECTION, {}, (err, word_list) => {
+	__MONGO_ACTIVE_DBS[__MONGO_DBNAME].findManyDocuments(__MONGO_WORDS_COLLECTION, {}, (err, word_list) => { // Fetching the words
 		if (err) return cb(err);
-		level = (level < __MIN_LEVEL || level > __MAX_LEVEL) ? __MAX_LEVEL : level;
+		level = (level < __MIN_LEVEL || level > __MAX_LEVEL) ? __MAX_LEVEL : level; // Validating level
 		let level_words = word_list.filter((w) => { if (w.word.length == level) return (w.word); });
-		if (!level_words.length) return (cb(null, word_list[0]));
+		if (!level_words.length) return (cb(null, word_list[0])); // No word found, we return the first word of the list
 		return (cb(null, level_words[Math.floor(Math.random() * level_words.length)]));
 	})
 }
