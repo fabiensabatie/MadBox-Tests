@@ -48,7 +48,7 @@ Dans public/scripts/translato.js la vue gère l'appel à l'api mentionnée ci-de
 - Une définition claire de la notion de niveau aurait permis d'éviter de collecter tous les mots lorsqu'un joueur demande d'une nouveau mot, en cherchant un couple traduit directement via le level.
 - L'API n'est pas sécurisée
 - Yandex ne parvient pas à tout traduire, par conséquent, un mot traduit qui est égal à son mot français est ignoré. Ceci peut mener à de faux négatifs pour les mots s'écrivant à l'identique en français et en anglais.
-
+- Yandex rend la recherche d'un mot parfois trop lente.
 
 ## Partie collision (Temps requis : 5h)
 
