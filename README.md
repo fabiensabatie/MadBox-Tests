@@ -16,7 +16,7 @@ node server.js renew
 ```
 
 La gestion des levels est faite via le nombre de lettres du mot en français (peut d'intérêt donc).
-J'ai utilisé MongoDB pour stocker les mots et leurs traductions. Le serveur stocke les mots à l'initialisation. la traduction est sauvegardée à la volée selon l'utilisation par un joueur.
+J'ai utilisé MongoDB pour stocker les mots et leurs traductions. Le serveur stocke les mots à l'initialisation. la traduction est sauvegardée à la volée selon l'utilisation par un joueur. La base de donnée est sur une sandbox MLAB, afin de vous éviter installation / configuration de MongoDB.
 
 Structure :
 ```
@@ -45,6 +45,8 @@ Dans public/scripts/translato.js la vue gère l'appel à l'api mentionnée ci-de
 ## Partie collision (Temps requis : 5h)
 
 Pour accéder au jeu de collision : http://localhost:8080/playable
+
+Comme sur la vidéo, un clic stoppe la rotation du rectangle, et un second réinitalise le jeu. Le jeu est aussi reset lorsque la balle sort du champ.
 
 Structure :
 ```
