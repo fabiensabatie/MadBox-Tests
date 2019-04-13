@@ -6,7 +6,6 @@ const Mongo			= Rfr('app_commons/mongo_cm.js').Mongo;
 ************************** Environment variables *******************************
 *******************************************************************************/
 
-global.__BASEDIR			= __dirname;
 global.__ROOT_URL			= 'http://localhost:8080';
 global.__INPROD				= false;
 global.__DEBUG				= true;
@@ -24,7 +23,7 @@ global.__MONGO_ACTIVE_DBS			= {};
 global.__MONGO_WORDS_COLLECTION		= 'words';
 
 // Game management environment
-global.__WORDLIST_PATH  = (__dirname + '/verbe.txt');
+global.__WORDLIST_PATH  = ('verbe.txt');
 global.__WL = [];
 global.__API_KEY = "trnsl.1.1.20190412T003823Z.f986ceeaa9058f8c.3c5a105dc5941daa55c85c7613ce8fa5535449bd";
 global.__TRANSLATION_URL = `https://translate.yandex.net/api/v1.5/tr.json/translate?&lang=fr-en&key=${__API_KEY}&text=`;

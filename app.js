@@ -8,6 +8,7 @@ const Globals				= Rfr('app_commons/globals_cm');
 
 App.use('/', Express.static(__dirname + '/public'));
 App.set('view engine', 'pug');
+global.__BASEDIR			= __dirname;
 
 exports.App		= App;
 exports.Server	= Server;
